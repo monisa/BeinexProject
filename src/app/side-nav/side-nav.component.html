@@ -1,0 +1,32 @@
+<mat-toolbar class="sticky">
+  <button mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
+    <div><img class="logo" src="assets/images/beinex-logo.png" /></div>
+    <div class="padLeft">Executive Dashboard</div>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>settings</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>person</mat-icon>
+    </button>
+  </mat-toolbar>
+  
+  <mat-drawer-container class="example-container sticky" [autosize]="false">
+    <mat-drawer #drawer mode="side" [opened]="isExpanded" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+          <mat-nav-list>
+              <mat-list-item>
+                  <mat-icon mat-list-icon>home</mat-icon> &nbsp;&nbsp;
+                  <span>Dashboard</span>
+              </mat-list-item>
+              
+              <mat-list-item>
+                <mat-icon mat-list-icon>work</mat-icon> &nbsp;&nbsp;
+                <span>Data</span>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-drawer>
+      <mat-drawer-content class="content">
+      <app-dashboard></app-dashboard>
+      </mat-drawer-content>
+  
+  </mat-drawer-container>
